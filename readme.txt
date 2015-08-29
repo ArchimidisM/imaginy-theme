@@ -91,3 +91,4 @@ Twitter Bootstrap customize ID : http://getbootstrap.com/customize/?id=d3e1b42ac
 - Removed numeric pagination.
 - Better widget styling.
 - Better responsive navigation styling.
+- Better coding in general.
