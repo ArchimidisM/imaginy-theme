@@ -1,9 +1,6 @@
 == IMAGINY ==
 
-Imaginy is one of the best free personal blogging theme. 
-It is a great theme for blogs, magazines, personal portfolios, 
-and so much more.It is fully responsive because it is built on Twitter Bootstrap famous 
-framework.
+Imaginy is one of the best free personal blogging theme.It is a great theme for blogs,magazines, personal portfolios, and so much more.It is fully responsive because it is built on Twitter Bootstrap famous framework.
 
 /**********************************************************/
 
@@ -92,3 +89,7 @@ Twitter Bootstrap customize ID : http://getbootstrap.com/customize/?id=d3e1b42ac
 - Better widget styling.
 - Better responsive navigation styling.
 - Better coding in general.
+
+= Version 1.2.1 =
+- Better description added
+- Better sanitization in functions.php

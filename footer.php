@@ -16,7 +16,8 @@
             
             <?php for($i=1; $i<$imaginy_sidebar_number+1; $i++) { ?>  
             
-                <div class="<?php echo $imaginy_sidebar_class; ?> footer-sidebar matchHeight">
+                <div class="<?php echo strip_tags($imaginy_sidebar_class); ?> footer-sidebar
+                matchHeight">
                     <?php if (!dynamic_sidebar( 'imaginy_footer_'.$i.'_sidebar')): ?>
                         <div class="pre-widget">
                             <h3><?php _e('Widgetized Sidebar', 'imaginy'); ?></h3>

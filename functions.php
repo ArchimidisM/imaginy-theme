@@ -405,7 +405,7 @@ if(!function_exists('imaginy_show_post_title')):
         $title = get_the_title($post_id);
         
         if($title == ''):
-            $title =  get_the_date(get_option('date_format'),$post_id);
+            $title =  strip_tags(get_the_date(get_option('date_format'),$post_id));
         endif;
     return $title;
     }
@@ -416,7 +416,7 @@ endif;
 if(!function_exists('imaginy_show_sidebar')):
     function imaginy_show_sidebar(){
         
-        $has_sidebar = get_theme_mod('imaginy_enable_right_sidebar',0);
+        $has_sidebar = strip_tags(get_theme_mod('imaginy_enable_right_sidebar',0));
         if($has_sidebar == 0):
             
             return false;
@@ -441,17 +441,16 @@ if(!function_exists('imaginy_main_content_layout_class')):
        
         endif;
     }
-endif; 
+endif;
 
 /**==== Post Formats =====**/
 if(!function_exists('imaginy_get_post_format')):
     function imaginy_get_post_format(){
-        $post_format = get_post_format(get_the_ID());
+        $post_format = strip_tags(get_post_format(get_the_ID()));
         
         return $post_format;
     }
 endif;
-
 /**== Get first lines of content to use with featured image ==**/
 function imaginy_get_embed(){
     
@@ -553,7 +552,9 @@ function imaginy_comment($comment, $args, $depth) {
     <div class="comment-author vcard">
         <?php 
         if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-        <?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ); ?>
+        <?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>','imaginy'
+        ),
+            get_comment_author_link() ); ?>
         
         <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
         <?php
@@ -594,7 +595,7 @@ if(!function_exists('imaginy_active_footer_sidebars')):
             endif;
             
         }
-        return $active_sidebars;
+        return strip_tags($active_sidebars);
     }
 endif;
 
